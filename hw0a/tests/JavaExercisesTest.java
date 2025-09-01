@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.*;
 
-import static com.google.common.truth.Truth.assertThat;
+import static org.junit.jupiter.api.Assertions.*; // 用 JUnit 自带断言
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class JavaExercisesTest {
@@ -19,18 +19,18 @@ public class JavaExercisesTest {
 
     @Test
     public void testStutter() {
-        assertThat(JavaExercises.stutter("hello")).isEqualTo("hheelllloo");
-        assertThat(JavaExercises.stutter("abc")).isEqualTo("aabbcc");
-        assertThat(JavaExercises.stutter("")).isEqualTo("");
+        assertEquals("hheelllloo", JavaExercises.stutter("hello"));
+        assertEquals("aabbcc", JavaExercises.stutter("abc"));
+        assertEquals("", JavaExercises.stutter(""));
     }
 
     @Test
     public void testQuadrant() {
-        assertThat(JavaExercises.quadrant(3, 4)).isEqualTo(1);
-        assertThat(JavaExercises.quadrant(-3, 4)).isEqualTo(2);
-        assertThat(JavaExercises.quadrant(-3, -4)).isEqualTo(3);
-        assertThat(JavaExercises.quadrant(3, -4)).isEqualTo(4);
-        assertThat(JavaExercises.quadrant(0, 5)).isEqualTo(0);
-        assertThat(JavaExercises.quadrant(5, 0)).isEqualTo(0);
+        assertEquals(1, JavaExercises.quadrant(3, 4));
+        assertEquals(2, JavaExercises.quadrant(-3, 4));
+        assertEquals(3, JavaExercises.quadrant(-3, -4));
+        assertEquals(4, JavaExercises.quadrant(3, -4));
+        assertEquals(0, JavaExercises.quadrant(0, 5));
+        assertEquals(0, JavaExercises.quadrant(5, 0));
     }
 }
